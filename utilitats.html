@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="https://kit.fontawesome.com/80ae810d67.js" crossorigin="anonymous"></script>
+    <title>Utilitats</title>
+</head>
+
+<body>
+    <header>
+        <div id="logo">
+            <a href="./index.html">
+                <img src="./img/logo.png" alt="Logo">
+            </a>
+        </div>
+        <div id="calendar">
+            <p id="any"></p>
+            <p id="dia"></p>
+            <p id="mes"></p>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="./index.html"><i class="fas fa-home"></i> HOME</a></li>
+            <li><a href="./utilitats.html"><i class="fas fa-tools"></i> UTILITATS</a></li>
+            <li><a href="./login.html"><i class="fas fa-user"></i> LOG IN</a>
+        </ul>
+    </nav>
+    <div class="content">
+        <h2>Utilitats</h2>
+        <div id="calculadora-imc">
+            <h2>Calculadora IMC</h2>
+            <p>Calcula el teu Índex de Massa Corporal</p>
+            <form>
+                <div class="form-row">
+                    <label for="altura">Alçada (m):</label>
+                    <input type="text" name="altura" id="altura">
+                </div>
+                <div class="form-row">
+                    <label for="pes">Pes (KG):</label>
+                    <input type="number" name="pes" id="pes" min="1" value="0"><br>
+                </div>
+                <button type="button" id="imcButton" onclick="calculaIMC()">Calcula</button>
+                <p id='imc-info'></p>
+            </form>
+            <table id="imc-table">
+                <tbody>
+                    <tr id="infrapeso1">
+                        <td>&lt; 16.00</td>
+                        <td>Infrapeso (delgadez severa)</td>
+                    </tr>
+                    <tr id="infrapeso2">
+                        <td>16.00 – 16.99</td>
+                        <td>Infrapeso (delgadez moderada)</td>
+                    </tr>
+                    <tr id="infrapeso3">
+                        <td>17.00 - 18.49</td>
+                        <td>Infrapeso (delgadez aceptable)</td>
+                    </tr>
+                    <tr id="normal">
+                        <td>18.50 - 24.99</td>
+                        <td>Peso normal</td>
+                    </tr>
+                    <tr id="sobrepeso">
+                        <td>25.00 - 29.99:</td>
+                        <td>Sobrepeso</td>
+                    </tr>
+                    <tr id="obeso1">
+                        <td>30.00 - 34.99</td>
+                        <td>Obeso (Tipo I)</td>
+                    </tr>
+                    <tr id="obeso2">
+                        <td>35.00 - 40.00</td>
+                        <td>Obeso (Tipo II)</td>
+                    </tr>
+                    <tr id="obeso3">
+                        <td>&gt; 40.00</td>
+                        <td>Obeso (Tipo III)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div id="calculadora-fmc">
+            <h2>Calculadora de FCM</h2>
+            <p>Calcula la teva Freqüència Cardíaca Màxima</p>
+            <form>
+                <div class="form-row">
+                    <label for="edat">Edat</label>
+                    <input type="number" name="edat" id="edat" min="0" value="0">
+                </div>
+                <div class="form-row">
+                    <label for="sexe">Sexe</label>
+                    <select name="sexe" id="sexe">
+                        <option value="mascle">Mascle</option>
+                        <option value="femella">Femella</option>
+                    </select>
+                </div>
+                <button type="button" id="fcmButton" onclick="calculaFCM()">Calcula</button>
+                <div id='fcm-info'></div>
+            </form>
+        </div>
+        <div id="categoria">
+            <h2>Calculadora de categoria</h2>
+            <p>Calcula la teva categoria de fútbol segons la teva edat</p>
+            <div class="form-row">
+                <label for="any">Any de neixament</label>
+                <input type="number" name="any" id="any" min="1800" value="2000">
+            </div>
+            <button type="button" id="categoriaButton" onclick="calculaCategoria()">Calcula</button>
+            <p id='categoria-info'></p>
+        </div>
+        <div id="horari">
+            <h2>Horari</h2>
+            <div id="horari-mati"></div>
+            <div id="horari-capvespre"></div>
+        </div>
+    </div>
+    <aside>
+        <h2>UTILITATS</h2>
+        <ul>
+            <li><a href="./utilitats.html#calculadora-imc">Calculadora d'IMC (Índex de massa corporal)</a></li>
+            <li><a href="./utilitats.html#calculadora-fmc">Calculadora de FCM (Freqüència cardíaca màxima)</a></li>
+            <li><a href="./utilitats.html#categoria">Calculadora de categoría</a></li>
+            <li><a href="./utilitats.html#horari">Horari</a></li>
+        </ul>
+    </aside>
+    <footer>
+        <div id="footer">
+            <div id="adreca">
+                <p>Gimnàs Ca Nostra</p>
+                <p>C/ de la Seu, nº4, 07760</p>
+                <p>Ciutadella de Menorca</p>
+                <p>Illes Balears, Espanya</p>
+                <p><a href="tel:+34971383061"><i class="fas fa-phone"></i> 971383061</a></p>
+                <p><a href="mailto:gimnascanostra@gmail.com"><i class="fas fa-envelope"></i>
+                        gimnascanostra@gmail.com</a>
+                </p>
+            </div>
+            <iframe id="mapa"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3057.2086333495663!2d3.836757714747165!3d39.981442689922346!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12be03f5d06cb623%3A0x68e81ecf8bf8eb95!2sGimn%C3%A0s%20Ca%20Nostra!5e0!3m2!1ses!2ses!4v1573317163431!5m2!1ses!2ses"
+                width="600" height="400" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            <div id="xarxes-socials">
+                <ul>
+                    <li><a href="https://www.facebook.com/gimnascanostra/"><i class="fab fa-facebook-square"></i>
+                            Facebook</a></li>
+                    <li><a href="www.instagram.com"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="www.twitter.com"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+                    <li><a href="www.youtube.com"><i class="fab fa-youtube"></i> YouTube</a></li>
+                </ul>
+            </div>
+        </div>
+        <div id="info">
+            <p>Web desarrollada per: Alejandra Català &#9670 <a href="/avislegal.html" target="_blank">Avís legal</a>
+            </p>
+        </div>
+    </footer>
+    <script src="js/imc.js"></script>
+    <script src="js/fcm.js"></script>
+    <script src="js/categoria.js"></script>
+    <script src="js/horari.js"></script>
+    <script src="js/calendar.js"></script>
+</body>
+
+</html>

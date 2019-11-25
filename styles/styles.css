@@ -1,0 +1,573 @@
+:root {
+    --main-color: #6a0509;
+    --main-color-highlight: #7e060a;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.red {
+    color: red;
+}
+
+h1, h2 {
+    font-weight: 500;
+    margin: 0;
+}
+
+h1 {
+    font-size: 2em ;
+    text-align: center;
+    margin: 1em 0 1em 0;
+}
+
+.content {
+    margin: 1em auto;
+    text-align: center;
+}
+
+.content>div {
+    margin-top: 1em;
+    margin-bottom: 4em;
+}
+
+.content h2 + p {
+    margin-top: 0;
+}
+
+a:hover {
+    color: white;
+}
+
+/*HEADER*/
+
+header {
+    height: 15em;
+    background-image: url('../img/header.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center; /* Center the image */
+    position: relative;
+}
+
+header #logo {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 75%, rgba(255,255,255,0) 100%);
+    display: inline-block;
+    padding: 1em 6em 1em 1em;
+    position: absolute;
+    top: 3.5em;
+}
+
+header img {
+    width: 20em;
+}
+
+#calendar {
+    position: absolute;
+    right: 2em;
+    top: 3.5em;
+    background-color: white;
+    text-align: center;
+    border: 1px solid var(--main-color);
+    width: 118px;
+}
+
+#calendar p {
+    margin: 0;
+}
+
+#dia-calendar {
+    padding: 0.75em 0;
+    border-top: 2px solid var(--main-color);
+    border-bottom: 2px solid var(--main-color);
+    font-size: 1.4em;
+    
+}
+
+#mes-calendar, #any-calendar {
+    background-color: var(--main-color);
+    color: white;
+    font-size: 0.9em;
+    padding: 0.1em 0.5em;
+}
+
+
+/*NAV*/
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: var(--main-color);
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    width: 10em;
+}
+
+nav li a {
+    font-size: 1em;
+    display: block;
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 0.75em 0.5em;
+    text-decoration: none;
+}
+
+nav li a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: white;
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+nav li a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+/*ASIDE*/
+
+aside {
+    position: absolute;
+    background-color: var(--main-color);
+    width: 20%;
+    top: 17.9em;
+    height: 30em;
+    border-top: 1px solid white;
+}
+
+aside h2 {
+    margin: 1em 0 1em 0.75em;
+    color: white;
+}
+
+aside ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+aside ul li {
+    padding: 1em;
+    border-top: 1px solid white;
+}
+
+aside a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+aside li:hover {
+    background-color: var(--main-color-highlight);
+}
+
+/*MAIN*/
+
+main {
+    width: 80%;
+    float: right;
+    margin-bottom: 1em;
+}
+
+.main {
+    height: 27.1em;
+}
+
+.main > * {
+    margin: 1em;
+}
+
+
+/*FORM*/
+
+.form-row {
+    margin: 0.5em 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-center {
+    text-align: center;
+}
+
+.form-center input{
+    margin-bottom: 1em;
+}
+
+label {
+    width: 7em;
+    display: inline-block;
+}
+
+input, select {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+input[type=text], input[type=number], input[type=password], select, option {
+    width: 20vw;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    font-size: 1em;
+    background-color: var(--main-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 0.5em 1.5em;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: var(--main-color-highlight);
+    cursor: pointer;
+}
+
+#fcm-info {
+    margin-top: 1em;
+}
+
+/*TABLE*/
+
+table {
+    margin: 0 auto;
+    border-spacing: 0;
+    overflow: visible;
+}
+
+th {
+    padding: 0.5em 1em;
+}
+
+td:not(:first-child) {
+    padding: 0.5em 1em;
+    text-align: center;
+}
+
+td:first-child {
+    padding: 0.5em 1em 0.5em 0.5em;
+}
+
+#imc-table td {
+    padding: 0.5em;
+}
+
+#horari table {
+    border-collapse: collapse;
+    border-radius: 5px;
+    overflow: hidden;
+    width: 85vw;
+}
+
+#horari div {
+    overflow-x: auto;
+    margin: 0 auto 2em auto;
+    width: 85vw;
+}
+
+#horari th {
+    background-color: var(--main-color);
+    color: white;
+    font-weight: normal;
+}
+
+#horari td {
+    border-bottom: 1px solid grey;
+}
+
+#horari h2 {
+    margin-bottom: 1em;
+}
+
+/*Caselles*/
+
+.casella {
+    width: calc(40% - 0.125em);
+    position: relative;
+    text-align: center;
+    color: white;
+    float: left;
+    height: 13em;
+    margin: 0.1em;
+}
+
+.casella h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+.casella img {
+    width: 100%;
+    height: 13em;
+    object-fit: cover;
+}
+
+.casella:after {
+    content: '';
+    position: absolute;
+    width: 100%; 
+    height: 13em;
+    top:0; 
+    left:0;
+    background:rgba(0,0,0,0.3);
+}
+
+.casella:hover:after {
+    background:rgba(0,0,0,0);
+}
+
+/*Fotos*/
+.foto{
+    position: relative;
+    width: 80%;
+    height: 30em;
+    margin: 1px 0 0 1px;
+    padding: 0;
+}
+
+.foto img {
+    width: 100%;
+    height: 30em;
+    object-fit: cover;
+}
+
+.foto-text {
+    color: white;
+    position: absolute;
+    bottom: 2em;
+    left: 2em;
+    z-index: 2;
+}
+
+.foto-text p {
+    margin: 0;
+    font-style: italic;
+}
+
+.foto:after {
+    content: '';
+    position: absolute;
+    width: 100%; 
+    height: 30em;
+    top:0; 
+    left:0;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 75%, rgba(0,0,0,1) 100%);
+}
+
+/*MODAL*/
+/* The Modal (background) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 3;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4);
+    text-align: center;
+  }
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 1em;
+    border: 1px solid #888;
+    border-radius: 5px;
+    display: inline-block;
+  }
+
+  .modal-content p {
+    font-size: 1.2em;
+    font-weight: 500;
+  }
+
+
+/*FOOTER*/
+
+footer {
+    background-color: var(--main-color);
+    padding: 1em;
+    clear: both;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+#footer i {
+    vertical-align: middle;
+}
+
+#footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+#footer p, #footer li {
+    margin: 0.9em;
+}
+
+#adreca {
+    width: 25%;
+}
+
+#mapa {
+    margin: 0.5em;
+    width: 50%;
+    height: 11.5em;
+}
+
+#xarxes-socials {
+    width: 25%;
+    margin: 0.5em;
+}
+
+footer p, footer a {
+    color: white;
+    text-decoration: none;
+}
+
+#info p {
+    text-align: center;
+    margin: 0;
+    margin-top: 0.1em;
+}
+
+/*Footer*/
+
+@media(max-width: 1360px) {
+    #adreca {
+        width: 30%;
+    }
+    #mapa {
+        width: 45%;
+    }
+    #xarxes-socials {
+        width: 25%;
+    }
+}
+
+@media(max-width: 928px) {
+    #adreca {
+        width: 35%;
+    }
+    #mapa {
+        width: 40%;
+    }
+    #xarxes-socials {
+        width: 25%;
+    }
+}
+
+@media(max-width: 810px) {
+    #adreca {
+        width: 40%;
+    }
+    #mapa {
+        width: 35%;
+    }
+    #xarxes-socials {
+        width: 25%;
+    }
+}
+
+@media(max-width: 732px) {
+    #adreca {
+        width: 60%;
+    }
+    #mapa {
+        display: none;
+    }
+    #xarxes-socials {
+        width: 40%;
+    }
+}
+
+@media(max-width: 480px) {
+    #footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    #adreca {
+        width: 100%;
+        
+    }
+    #xarxes-socials {
+        width: 100%;
+    }
+}
+
+/*Galeria*/
+@media(max-width: 750px){
+
+    main, .main {
+        width: 100%;
+        margin: auto;
+    }
+    .galeria, .foto {
+        width: 90%;
+        margin: auto;
+    }
+
+    .casella {
+        width: calc(100% - 0.125em);
+    }
+
+    aside {
+        display: none;
+    }
+}
+
+/*Header*/
+@media(max-width: 500px){
+
+    header {
+        height: 40vw;
+    }
+
+    header img {
+        width: 70%;
+    }
+    header div {
+        width: 80%;
+        padding: 1em;
+        position: absolute;
+        top: 25%;
+    }
+    
+}
